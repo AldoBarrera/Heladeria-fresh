@@ -1,0 +1,42 @@
+﻿<h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/webmethodsadd" routerLinkActive="active" class="btn btn-primary">
+    Add
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Web Method Name</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.wmet_name }}</td> 
+
+    
+      <td><a routerLink="/webmethodsedit/{{singleData[keyName]}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData[keyName])" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+

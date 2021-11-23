@@ -1,0 +1,48 @@
+﻿<h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/grupfieldsprivileguesadd" routerLinkActive="active" class="btn btn-primary">
+    Add
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Group Id</th> 
+<th scope="col">General Api Id</th> 
+<th scope="col">Specifico Api Id</th> 
+<th scope="col">Allow?</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.gasp_grup_id.grup_code  }}</td> 
+<td>{{ singleData.gasp_apig_id.apig_code  }}</td> 
+<td>{{ singleData.gasp_apis_id.apis_description  }}</td> 
+<td>{{ singleData.gasp_grantaccess }}</td> 
+
+    
+      <td><a routerLink="/grupfieldsprivileguesedit/{{singleData[keyName]}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData[keyName])" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+

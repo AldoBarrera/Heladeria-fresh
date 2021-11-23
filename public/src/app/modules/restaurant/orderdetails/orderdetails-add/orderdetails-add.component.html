@@ -1,0 +1,6 @@
+﻿<app-nav-barrestaurant></app-nav-barrestaurant>
+<div>
+  <h2>Add Form</h2>
+  <app-forms [controls]="controls" (onSubmitCallback)="onSubmit($event)"></app-forms>
+  <button  (click)="refresh()">Refresh</button>
+</div>

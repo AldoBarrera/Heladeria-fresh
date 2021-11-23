@@ -1,0 +1,57 @@
+﻿<div *ngIf="data">
+ <h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/fieldsadd" routerLinkActive="active" class="btn btn-primary">
+    Search
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">User Name</th> 
+<th scope="col">Label</th> 
+<th scope="col">Email</th> 
+<th scope="col">Required?</th> 
+<th scope="col">Type</th> 
+<th scope="col">Order</th> 
+<th scope="col">Control</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.fiel_key }}</td> 
+<td>{{ singleData.fiel_label }}</td> 
+<td>{{ singleData.fiel_value }}</td> 
+<td>{{ singleData.fiel_required }}</td> 
+<td>{{ singleData.fiel_type }}</td> 
+<td>{{ singleData.fiel_order }}</td> 
+<td>{{ singleData.fiel_control }}</td> 
+
+    
+      <td><a routerLink="/fieldsedit/{{singleData._id}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData)" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

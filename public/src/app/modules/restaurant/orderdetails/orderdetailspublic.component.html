@@ -1,0 +1,85 @@
+﻿<table id="tableOrderDetails" class="table card-table table-responsive table-responsive-large" style="margin-top: 1rem;width:100%;">
+  <thead>
+    <tr>
+      <th class=" d-md-table-cell">Cant</th>
+      <th class=" d-md-table-cell">Desc</th>
+      <th class=" d-md-table-cell">Precio</th>
+      <th class=" d-md-table-cell">total</th>
+<th class=" d-md-table-cell"> </th>
+    </tr>
+  </thead>
+  <tbody>
+
+<tr *ngFor="let singleData of data | myfilter:{ordd_ordn_id:order._id}">
+                            
+  <td class=" d-md-table-cell">{{ singleData.ordd_count }}</td>
+  <td class=" d-md-table-cell">{{ singleData.ordd_dish_id.dish_name  }}</td>
+  <td class= "d-md-table-cell">{{ singleData.ordd_dish_id.dish_precio}}</td>
+  <td class=" d-md-table-cell">{{singleData.ordd_dish_id.dish_precio * singleData.ordd_count}}</td>
+<td >
+    <span  (click)="removeData(singleData[keyName])" class="btn badge badge-danger">x</span>
+  </td>
+  
+</tr>
+
+</tbody>
+</table>
+<div id="printf">
+<div style="
+min-height: 115px;
+">
+  <table id="tableOrderDetailsPrint" class="" style="font-size:20;width:240px">
+    <tbody>
+
+  <tr *ngFor="let singleData of data | myfilter3:{ordd_ordn_id:order._id}">
+                              
+
+    <td style="
+    padding-top: 0;
+    padding: 0;
+" class="">{{ singleData.ordd_dish_id.dish_name  }}</td>
+    <td style="
+    padding-top: 0;
+    color: black;
+    text-align: right;
+" class= "">{{ singleData.ordd_dish_id.dish_precio}}Bs</td>
+    
+  </tr>
+
+  </tbody>
+  </table>
+</div>
+<div style="
+text-align: center;
+text-decoration: underline;
+font-weight: bold;
+color: black;
+">BEBIDA</div>
+<div style="
+min-height: 85px;
+">
+  <table id="tableOrderDetailsPrint" class="" style="font-size:20;width:240px">
+    <tbody>
+
+  <tr *ngFor="let singleData of data | myfilter2:{ordd_ordn_id:order._id}">
+                              
+
+    <td style="
+    padding-top: 0;
+    padding: 0;
+    color: black;
+    
+" class="">{{ singleData.ordd_dish_id.dish_name  }}</td>
+    <td style="
+    padding-top: 0;
+color: black;
+text-align: right;
+" class= "">{{ singleData.ordd_dish_id.dish_precio}}Bs</td>
+    
+  </tr>
+
+  </tbody>
+  </table>
+</div>
+<div>.</div>
+</div>

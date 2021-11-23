@@ -1,0 +1,55 @@
+@media print {
+    #bodycards {
+        display:none;
+     } 
+     #profile {
+        display:none;
+     } 
+     #profileSpace {
+        display:none;
+     }
+     #orderDropdown {
+        display:none;
+     }
+     
+     #leftBar {
+        padding: 0 !important;
+     } 
+     footer {
+        display:none;
+     }
+
+     #orderDropdownPrint {
+        padding: 0;
+        display: table !important;
+    }
+
+    #recent-orders {
+        border: 0 !important;
+    }
+
+    #tableOrders {
+        padding: 1 !important;
+        display: none;
+    }
+    .badge-danger {
+        display: none;
+    }
+
+    #tableLeft {
+       border: 0  !important;
+    }
+    #tableOrderDetails {
+      display:none;
+   }
+
+   #printf{
+      display: table !important;;
+  }
+    
+.content {
+   padding: 0 !important;
+}
+   
+     
+}

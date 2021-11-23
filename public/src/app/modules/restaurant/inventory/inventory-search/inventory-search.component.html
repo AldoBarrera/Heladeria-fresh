@@ -1,0 +1,50 @@
+﻿<app-nav-barrestaurant></app-nav-barrestaurant>
+<div *ngIf="data">
+ <h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/inventoryadd" routerLinkActive="active" class="btn btn-primary">
+    Search
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Helado</th> 
+<th scope="col">Cantidad Disponible</th> 
+<th scope="col">Date</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.inve_dish_id.dish_name  }}</td> 
+<td>{{ singleData.inve_available }}</td> 
+<td>{{ singleData.inve_date }}</td> 
+
+    
+      <td><a routerLink="/inventoryedit/{{singleData._id}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData)" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

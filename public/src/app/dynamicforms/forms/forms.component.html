@@ -1,0 +1,30 @@
+<form  class="was-validated" (ngSubmit)="onSubmit()" [formGroup]="form">
+  
+    <ng-container  *ngFor="let control of controls" >
+        <app-controls [control]="control" [form]="form"></app-controls>
+      </ng-container >
+  
+      <ng-container *ngIf ="!isEdit && !isConfirm" >
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Crear</button>
+      </ng-container>
+      <ng-container *ngIf ="isConfirm" >
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Confirmar Pedido</button>
+      </ng-container>
+      <ng-container *ngIf ="isEdit">
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Edit</button>
+      </ng-container>
+      <ng-container *ngIf ="isPrint">
+        
+      </ng-container>
+      <ng-container *ngIf ="isModal">
+        <button [id] = "idModal" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </ng-container>
+</form>
+
+
+  
+
+
+  
+
+  

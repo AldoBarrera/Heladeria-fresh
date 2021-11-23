@@ -1,0 +1,17 @@
+<div [formGroup]="form">
+    <ng-container *ngIf ="control.value">
+        <img width = 200 height = 200 class = "rounded mx-auto d-block" [src]="control.value" />
+        
+            <button class=" mx-auto d-block btn btn-primary" (click)="control.reset()">cambiar</button>
+          
+    </ng-container>
+
+    <ng-container *ngIf ="!control.value">
+        <input class="form-control form-control-sm" (change)="control.modelChanged($event, form.controls[control.key])"  [formControlName]="control.key + 'file'" [type]="control.type">
+    </ng-container>
+    <input class="form-control form-control-sm"  [formControlName]="control.key"
+     [id]="control.key" [hidden] = "true" [type]="text" [required]="control.required">
+
+     
+
+</div>

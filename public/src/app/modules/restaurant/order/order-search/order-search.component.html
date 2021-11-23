@@ -1,0 +1,48 @@
+﻿<app-nav-barrestaurant></app-nav-barrestaurant>
+<div *ngIf="data">
+ <h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/orderadd" routerLinkActive="active" class="btn btn-primary">
+    Search
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Pedido</th> 
+<th scope="col">Date</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.ordn_name }}</td> 
+<td>{{ singleData.ordn_date }}</td> 
+
+    
+      <td><a routerLink="/orderedit/{{singleData._id}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData)" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

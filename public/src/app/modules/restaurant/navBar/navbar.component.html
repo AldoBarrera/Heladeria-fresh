@@ -1,0 +1,61 @@
+﻿<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+   
+    <a class="navbar-brand" href="#">
+		<img src="./assets/img/logo.png" alt="" style="width: 100px">
+    </a>
+	  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+    </button>
+	  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+		<li class="nav-item" >
+            <a routerLink="/public" class="nav-link ">Home</a>
+          
+        </li>
+		<li class="nav-item dropdown"> 
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+			Security</a> 
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+				<a routerLink="/apigenerals"  routerLinkActive="active" class="dropdown-item">Api General</a>  
+				<a routerLink="/apispecifics"  routerLinkActive="active" class="dropdown-item">Api Specific</a>  
+				<a routerLink="/webmethods"  routerLinkActive="active" class="dropdown-item">Web Methods</a>  
+				<a routerLink="/grupapigprivilegues"  routerLinkActive="active" class="dropdown-item">Group x Api General Privilegue</a>  
+				<a routerLink="/grupapisprivilegues"  routerLinkActive="active" class="dropdown-item">Group x Api Specific Privilegue</a>  
+				<a routerLink="/grupfieldsprivilegues"  routerLinkActive="active" class="dropdown-item">Deny Group x Fields Privilegue</a>  
+				<a routerLink="/groups"  routerLinkActive="active" class="dropdown-item">Groups</a>  
+				<a routerLink="/users"  routerLinkActive="active" class="dropdown-item">Users</a>  
+				<a routerLink="/fields"  routerLinkActive="active" class="dropdown-item">Fields</a>  
+				<a routerLink="/usergruprelations"  routerLinkActive="active" class="dropdown-item">Users x Groups</a>  
+			</div> 
+		</li>
+		<li class="nav-item dropdown"> 
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+Heladeria</a> 
+<div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+<a routerLink="/dishes"  routerLinkActive="active" class="dropdown-item">Helado</a>  
+<a routerLink="/order"  routerLinkActive="active" class="dropdown-item">Pedido</a>  
+<a routerLink="/orderdetails"  routerLinkActive="active" class="dropdown-item">Detalles de pedido</a>  
+<a routerLink="/inventory"  routerLinkActive="active" class="dropdown-item">Inventario</a>  
+</div> 
+</li> 
+
+        
+        <li class="nav-item"  *ngIf="!isLogged">
+            <a routerLink="/subnets" class="nav-link "(click)="login()">Login</a>
+          
+        </li>
+        <li class="nav-item"  *ngIf="isLogged">
+            <a routerLink="/subnets"  class="nav-link " (click)="logout()">Logout</a>
+          
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+

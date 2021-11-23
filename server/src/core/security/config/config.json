@@ -1,0 +1,110 @@
+{"apiGenerals":{ 
+  "component":{ 
+    "urlRelative":"/apigenerals", 
+    "prefix":"apig", 
+    "label":"Api General", 
+    "name":"apiGenerals" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"apig_code","label":"General Api Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":true,"typeDb":"String"},{"key":"apig_description","label":"Descripcion","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false}]
+}, 
+"apiSpecifics":{ 
+  "component":{ 
+    "urlRelative":"/apispecifics", 
+    "prefix":"apis", 
+    "label":"Api Specific", 
+    "name":"apiSpecifics" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"apis_code","label":"Specific Api Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":false,"typeDb":"String"},{"key":"apis_description","label":"Descripcion","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"apis_apig_id","label":"Api General Id","value":"","required":true,"type":"text","order":1,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apig_code","ref":"apig_apiGenerals"},{"key":"apis_wmet_id","label":"Web Method","value":"","required":true,"type":"text","order":4,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"wmet_name","ref":"wmet_webMethods"}]
+}, 
+"webMethods":{ 
+  "component":{ 
+    "urlRelative":"/webmethods", 
+    "prefix":"wmet", 
+    "label":"Web Methods", 
+    "name":"webMethods" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"wmet_name","label":"Web Method Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":true,"typeDb":"String"}]
+}, 
+"grupApigPrivilegues":{ 
+  "component":{ 
+    "urlRelative":"/grupapigprivilegues", 
+    "prefix":"gagp", 
+    "label":"Group x Api General Privilegue", 
+    "name":"grupApigPrivilegues" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":2,"control":"textBox"},{"key":"gagp_grup_id","label":"Group Id","value":"","required":true,"type":"text","order":3,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"grup_code","ref":"grup_groups"},{"key":"gagp_apig_id","label":"General Api Id","value":"","required":true,"type":"text","order":4,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apig_code","ref":"apig_apiGenerals"},{"key":"gagp_grantaccess","label":"Allow?","value":"","required":true,"type":"text","order":6,"control":"textBox","typeDb":"Boolean","unique":false}]
+}, 
+"grupApisPrivilegues":{ 
+  "component":{ 
+    "urlRelative":"/grupapisprivilegues", 
+    "prefix":"gasp", 
+    "label":"Group x Api Specific Privilegue", 
+    "name":"grupApisPrivilegues" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":2,"control":"textBox"},{"key":"gasp_grup_id","label":"Group Id","value":"","required":true,"type":"text","order":3,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"grup_code","ref":"grup_groups"},{"key":"gasp_apig_id","label":"General Api Id","value":"","required":true,"type":"text","order":4,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apig_code","ref":"apig_apiGenerals"},{"key":"gasp_apis_id","label":"Specifico Api Id","value":"","required":true,"type":"text","order":5,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apis_description","ref":"apis_apiSpecifics"},{"key":"gasp_grantaccess","label":"Allow?","value":"","required":true,"type":"text","order":6,"control":"textBox","typeDb":"Boolean","unique":false}]
+}, 
+"grupFieldsPrivilegues":{ 
+  "component":{ 
+    "urlRelative":"/grupapisprivilegues", 
+    "prefix":"grfi", 
+    "label":"Deny Group x Fields Privilegue", 
+    "name":"grupFieldsPrivilegues" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":2,"control":"textBox"},{"key":"gasp_grup_id","label":"Group Id","value":"","required":true,"type":"text","order":3,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"grup_code","ref":"grup_groups"},{"key":"gasp_apig_id","label":"General Api Id","value":"","required":true,"type":"text","order":4,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apig_code","ref":"apig_apiGenerals"},{"key":"gasp_apis_id","label":"Specifico Api Id","value":"","required":true,"type":"text","order":5,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"apis_description","ref":"apis_apiSpecifics"},{"key":"gasp_grantaccess","label":"Allow?","value":"","required":true,"type":"text","order":6,"control":"textBox","typeDb":"Boolean","unique":false}]
+}, 
+"groups":{ 
+  "component":{ 
+    "urlRelative":"/groups", 
+    "prefix":"grup", 
+    "label":"Groups", 
+    "name":"groups" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"grup_code","label":"Group Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":true,"typeDb":"String"},{"key":"grup_description","label":"Descripcion","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false}]
+}, 
+"users":{ 
+  "component":{ 
+    "urlRelative":"/users", 
+    "prefix":"user", 
+    "label":"Users", 
+    "name":"users" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"user_name","label":"User Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":true,"typeDb":"String"},{"key":"user_password","label":"Password","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"user_email","label":"Email","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"user_domain","label":"domain","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false}]
+}, 
+"fields":{ 
+  "component":{ 
+    "urlRelative":"/fields", 
+    "prefix":"fiel", 
+    "label":"Fields", 
+    "name":"fields" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"fiel_key","label":"User Name","value":"","required":true,"type":"text","order":1,"control":"textBox","unique":true,"typeDb":"String"},{"key":"fiel_label","label":"Label","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"fiel_value","label":"Email","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"fiel_required","label":"Required?","value":"","required":true,"type":"text","order":6,"control":"textBox","typeDb":"Boolean","unique":false},{"key":"fiel_type","label":"Type","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false},{"key":"fiel_order","label":"Order","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"number","unique":false},{"key":"fiel_control","label":"Control","value":"","required":false,"type":"text","order":1,"control":"textBox","typeDb":"String","unique":false}]
+}, 
+"userGrupRelations":{ 
+  "component":{ 
+    "urlRelative":"/usergruprelations", 
+    "prefix":"usgr", 
+    "label":"Users x Groups", 
+    "name":"userGrupRelations" 
+  }, 
+  "model": 
+     [{"key":"_id","label":"Id","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"__v","label":"V","value":"","required":false,"type":"hidden","order":1,"control":"textBox"},{"key":"usgr_user_id","label":"User Id","value":"","required":true,"type":"text","order":1,"control":"dropdown","options":[],"unique":false,"typeDb":"Schema.Types.ObjectId","selectRelation":"user_name","ref":"user_users"},{"key":"usgr_grup_id","label":"Group Id","value":"","required":true,"type":"text","order":1,"control":"dropdown","options":[],"typeDb":"Schema.Types.ObjectId","unique":false,"selectRelation":"grup_code","ref":"grup_groups"}]
+}, 
+    "module": { 
+      "name":"security", 
+      "urlRelative":"/api/v1/security", 
+      "prefix":"sec", 
+      "label":"Security",
+      "superUsers" : [{
+	"user_email":"aldo.barrera@jalasoft.com"
+      }]
+     } 
+}

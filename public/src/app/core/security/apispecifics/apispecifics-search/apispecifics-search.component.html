@@ -1,0 +1,51 @@
+﻿<div *ngIf="data">
+ <h1>
+  Displaying {{ data.length }} {{moduleName}}.
+</h1>
+
+<div>    
+  <a routerLink="/apispecificsadd" routerLinkActive="active" class="btn btn-primary">
+    Search
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Specific Api Name</th> 
+<th scope="col">Descripcion</th> 
+<th scope="col">Api General Id</th> 
+<th scope="col">Web Method</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data">  
+    
+       <th scope="row"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td>{{ singleData.__v }}</td> 
+<td>{{ singleData.apis_code }}</td> 
+<td>{{ singleData.apis_description }}</td> 
+<td>{{ singleData.apis_apig_id.apig_code  }}</td> 
+<td>{{ singleData.apis_wmet_id.wmet_name  }}</td> 
+
+    
+      <td><a routerLink="/apispecificsedit/{{singleData._id}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td><button (click)="removeData(singleData)" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

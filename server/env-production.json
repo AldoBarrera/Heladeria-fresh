@@ -1,0 +1,14 @@
+{
+"PORT":"3000",
+"NODE_ENV":"production",
+"DATABASE":"192.168.56.1",
+"DATABASE_PORT":"27017",
+"DATABASE_USER":"smartBuilding",
+"DATABASE_PASSWORD":"5mar7Bu1ld1ng",
+"LOGIN_SERVICE":"192.168.56.1",
+"LOGIN_PORT":"8080",
+"LOGIN_SECRET":"8484d5e2-b35a-494f-8a48-c1f73c93421b",
+"LOGIN_REALM":"master",
+"LOGIN_CLIENT":"heladeria",
+"LOGIN_PROTOCOL":"https"
+}

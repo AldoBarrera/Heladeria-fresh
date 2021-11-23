@@ -1,0 +1,19 @@
+.card-table thead th {
+    padding: 0 1rem 1rem 0;
+}
+
+.card-table tbody td {
+    padding: 1rem 1rem 1rem 0;
+}
+
+.card-table tbody td {
+    font-size: 0.80rem;
+}
+
+.card-table thead th {
+    font-size:  0.80rem;
+}
+
+#printf{
+    display: none;
+}
