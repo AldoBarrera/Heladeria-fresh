@@ -1,0 +1,56 @@
+﻿<app-nav-barrestaurant></app-nav-barrestaurant>
+<h1>
+  Displaying {{ data.length }} {{moduleName}}.
+
+  CurrentData {{ currentData.ordn_name }}.
+</h1>
+
+<div>    
+  <a routerLink="/orderadd" routerLinkActive="active" class="btn btn-primary">
+    Add
+  </a>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>   
+	   <th scope="col">Id</th> 
+<th scope="col">V</th> 
+<th scope="col">Pedido</th> 
+<th scope="col">Date</th> 
+<th scope="col">Direccion</th> 
+<th scope="col">Telefono</th> 
+<th scope="col">Confirmado?</th> 
+<th scope="col">Enviado?</th> 
+<th scope="col">Enviar</th> 
+<th scope="col">Modificar</th> 
+<th scope="col">Remover</th> 
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let singleData of data" >  
+    
+       <th scope="row" *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'"> 
+<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
+{{ singleData._id }} 
+</a> 
+</th> 
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">{{ singleData.__v }}</td> 
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">{{ singleData.ordn_name }}</td> 
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">{{ singleData.ordn_date }}</td> 
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">{{ singleData.ordn_address }}</td> 
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">{{ singleData.ordn_phone }}</td> 
+<td *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'">Confirmado</td>  
+<td *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x' && singleData.ordn_send">Enviado</td>
+<td *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x' && !singleData.ordn_send">Pendiente</td>
+<td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'"><a routerLink="/ordersend/{{singleData[keyName]}}" type="button" class="btn btn-warning">Enviar</a></td>
+      <td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'"><a routerLink="/orderedit/{{singleData[keyName]}}" type="button" class="btn btn-info">Modificar</a></td>
+      <td  *ngIf="singleData.ordn_confirm && singleData.ordn_address !='x'"><button (click)="removeData(singleData[keyName])" type="button" class="btn btn-danger">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+

@@ -12,7 +12,7 @@ let keycloakConfig: KeycloakConfig = {
 };
 
 let appConfig = {
-  url: 'http://5661-2803-9400-3-1131-1d7-2877-2432-3798.ngrok.io'
+  url: 'http://localhost:3101'
 };
 
 export const environment = {

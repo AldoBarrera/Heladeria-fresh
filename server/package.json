@@ -27,10 +27,12 @@
     "cross-env-file": "1.0.0"
   },
   "dependencies": {
+    "@types/express-session": "^1.17.4",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "bookshelf": "^1.0.1",
     "bookshelf-modelbase": "^2.10.4",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
     "express-session": "1.17",
     "formidable": "^1.2.2",

@@ -4,14 +4,20 @@
         <app-controls [control]="control" [form]="form"></app-controls>
       </ng-container >
   
-      <ng-container *ngIf ="!isEdit && !isConfirm" >
+      <ng-container *ngIf ="!isEdit && !isConfirm  && !isLogin" >
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Crear</button>
       </ng-container>
-      <ng-container *ngIf ="isConfirm" >
+      <ng-container *ngIf ="!isEdit && !isLogin && isConfirm" >
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Confirmar Pedido</button>
       </ng-container>
-      <ng-container *ngIf ="isEdit">
+      <ng-container *ngIf ="!isEdit && !isConfirm && isLogin" >
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Login</button>
+      </ng-container>
+      <ng-container *ngIf ="isEdit && !isSend">
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Edit</button>
+      </ng-container>
+      <ng-container *ngIf ="isEdit && isSend">
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Enviar Pedido</button>
       </ng-container>
       <ng-container *ngIf ="isPrint">
         

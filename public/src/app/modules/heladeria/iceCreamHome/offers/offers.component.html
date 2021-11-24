@@ -1,0 +1,323 @@
+﻿
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heladeria Fresh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a routerLink="/home"  routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/offers"  routerLinkActive="active" class="nav-link">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/adress"  routerLinkActive="active" class="nav-link">Direccion</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public"  routerLinkActive="active" class="nav-link">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/aboutus"  routerLinkActive="active" class="nav-link">Quienes Somos</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="margin-left: auto;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<ngb-carousel *ngIf="images && pageName == 'ofertas'">
+  <ng-template ngbSlide style="max-height: 432px;">
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(119, 204, 253);">
+      <h3> El helado más moderno</h3>
+      <p>No dejes para mañana el helado que te puedes saborear hoy.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" >
+      <img [src]="images[1]" alt="Random second slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(248, 241, 241);">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(15, 15, 15);">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+
+
+<div class="wrapper">
+  <div class="">
+    <div class="content-wrapper">
+      <div class="content">							
+        <div id = "tableLeft" class="bg-white border rounded">
+          <div class="row no-gutters">
+            
+        
+            <div id = "bodycards" class="card card-default" *ngIf="pageName == 'ofertas'">
+              <div class="card-header card-header-border-bottom">
+                <h2>Ofertas - FRESH</h2>
+                <!--Carousel Wrapper-->
+                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                  <!--Controls-->
+                  <div class="controls-top" style="text-align: center;">
+                    <a class="btn-floating" href="#multi-item-example" data-slide="prev">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                      </svg>
+                    </a>
+                    <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                      </svg>
+                    </a>
+                  </div>
+                  <!--/.Controls-->
+
+                  <!--Indicators-->
+                  <ol class="carousel-indicators">
+                    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                    <li data-target="#multi-item-example" data-slide-to="1"></li>
+                    
+                  </ol>
+                  <!--/.Indicators-->
+
+                  <!--Slides-->
+                  <div class="carousel-inner" role="listbox">
+
+                    <!--First slide-->
+                    <div class="carousel-item active">
+
+
+
+                      <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d1.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Añadiendo dulce alegría</h4>
+                            <p class="card-text">En un caluroso día de verano, nada se compara con una refrescante bola de su helado favorito. </p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d2.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Bondad de la fruta </h4>
+                            <p class="card-text">De lo prohibido eres adicto, no nos importa tu dieta. Lo que nos importa es hacerte feliz con nuestras exclusivas paletas de crema helada.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-3" style="float:left">
+                      <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d3.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title"> Es simplemente delicioso</h4>
+                            <p class="card-text">Lo único bueno de tener calor es que se puede eliminar con un buen helado cítrico.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!--/.First slide-->
+                    <!--First slide-->
+                    <div class="carousel-item">
+
+
+
+                      <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d4.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Añadiendo dulce alegría</h4>
+                            <p class="card-text">En un caluroso día de verano, nada se compara con una refrescante bola de su helado favorito. </p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d5.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Bondad de la fruta </h4>
+                            <p class="card-text">De lo prohibido eres adicto, no nos importa tu dieta. Lo que nos importa es hacerte feliz con nuestras exclusivas paletas de crema helada.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-3" style="float:left">
+                      <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/d6.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title"> Es simplemente delicioso</h4>
+                            <p class="card-text">Lo único bueno de tener calor es que se puede eliminar con un buen helado cítrico.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!--/.First slide-->
+
+
+                    <!--First slide-->
+                    <div class="carousel-item">
+
+
+
+                      <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/1.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Añadiendo dulce alegría</h4>
+                            <p class="card-text">En un caluroso día de verano, nada se compara con una refrescante bola de su helado favorito. </p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/2.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Bondad de la fruta </h4>
+                            <p class="card-text">De lo prohibido eres adicto, no nos importa tu dieta. Lo que nos importa es hacerte feliz con nuestras exclusivas paletas de crema helada.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-3" style="float:left">
+                      <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/3.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title"> Es simplemente delicioso</h4>
+                            <p class="card-text">Lo único bueno de tener calor es que se puede eliminar con un buen helado cítrico.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!--/.First slide-->
+
+                    <!--Second slide-->
+                    <div class="carousel-item">
+
+                      <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/4.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Prueba diferente con cada cuchara</h4>
+                            <p class="card-text">Quizás el helado no cura la depresión, pero es un paso hacia la felicidad y eso ayuda mucho.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/5.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Traemos alegría a la vida de todos</h4>
+                            <p class="card-text">El helado es democrático, todos somos igual de débiles en su presencia.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                          <img class="card-img-top"
+                            src="./assets/img/6.jfif" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title"> Para todos los gustos</h4>
+                            <p class="card-text">Amorosos sabores perfectamente emparejados, ven y prueba nuestra línea tri-sabor. El único triángulo amoroso, que te da felicidad.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!--/.Second slide-->
+
+                  
+
+                  </div>
+                  <!--/.Slides-->
+
+                </div>
+              </div>
+            </div>
+
+            
+
+
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <footer class="footer mt-auto">
+        <div class="copyright bg-white">
+          <p>
+            &copy; <span id="copy-year">2021</span> Copyright Helados Powered by 
+            <a
+              class="text-primary"
+              href="https://www.facebook.com/"
+              target="_blank"
+              >Fresh</a
+            >.
+          </p>
+        </div>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.getElementById("copy-year").innerHTML = year;
+        </script>
+      </footer>
+
+  </div>
+</div>      
+         
+
+  

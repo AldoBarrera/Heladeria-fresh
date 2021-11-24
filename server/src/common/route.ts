@@ -24,64 +24,70 @@ export class CommonRouter extends App.CommonSocket{
   }
 
   async GetAllData(req: Request, res: Response, next: NextFunction) {
-    let query = req.query;
-    let dataResponse;
-    let restrict = query.fields?JSON.parse(query.fields.toString()):null;
-    if (restrict){
-      dataResponse = await this.commonComponent.GetAllRestrictData(restrict);
-    } else if(query.populate) {
-      dataResponse = await this.commonComponent.GetPopulateData();
-    } else {
-      dataResponse = await this.commonComponent.GetAllData();
-    }
-    res.send(dataResponse);
+
+      let query = req.query;
+      let dataResponse;
+      let restrict = query.fields?JSON.parse(query.fields.toString()):null;
+      if (restrict){
+        dataResponse = await this.commonComponent.GetAllRestrictData(restrict);
+      } else if(query.populate) {
+        dataResponse = await this.commonComponent.GetPopulateData();
+      } else {
+        dataResponse = await this.commonComponent.GetAllData();
+      }
+      res.send(dataResponse);
   }
 
   async FindData(req: Request, res: Response, next: NextFunction) {
-    let query = req.query;
-    const dataResponse = await this.commonComponent.FindData(query);
-    res.send(dataResponse);
+    let session=req.session;
+      let query = req.query;
+      const dataResponse = await this.commonComponent.FindData(query);
+      res.send(dataResponse);
   }
 
   async GetSingleData(req: Request, res: Response, next: NextFunction) {    
-    let id = req.params.id;
-    let query = req.query;
-    let dataResponse;
-    if(query.populate) {
-      dataResponse = await this.commonComponent.GetPopulateDataById(id);
-    } else {
-      dataResponse = await this.commonComponent.GetDataById(id);
-    }
-    res.send(dataResponse);
+      let id = req.params.id;
+      let query = req.query;
+      let dataResponse;
+      if(query.populate) {
+        dataResponse = await this.commonComponent.GetPopulateDataById(id);
+      } else {
+        dataResponse = await this.commonComponent.GetDataById(id);
+      }
+      res.send(dataResponse);
   }
 
   async InsertData(req: Request, res: Response, next: NextFunction) {
-    let data = req.body;
-    const dataResponse = await this.commonComponent.InsertData(data);
-    if(dataResponse) {
-      const dataResponsePopulate = await this.commonComponent.GetPopulateDataById(dataResponse.id);
-      res.send(dataResponsePopulate);
-    } else {
-      res.send(dataResponse);
-    } 
+   
+      let data = req.body;
+      const dataResponse = await this.commonComponent.InsertData(data);
+      if(dataResponse) {
+        const dataResponsePopulate = await this.commonComponent.GetPopulateDataById(dataResponse.id);
+        res.send(dataResponsePopulate);
+      } else {
+        res.send(dataResponse);
+      }
   }
   
   async UpdateData(req: Request, res: Response, next: NextFunction) {
-    let data = req.body;
-    let query = {[this.commonComponent.keyName]:req.params.id};
-    const dataResponse = await this.commonComponent.UpdateData(query, data);
-    if (dataResponse.n == 1 && dataResponse.ok == 1) {
-      const dataResponsePopulate = await this.commonComponent.GetPopulateDataById(req.params.id);
-      res.send(dataResponsePopulate);
-    } else {
-      res.send(dataResponse);
-    }  
+
+      let data = req.body;
+      let query = {[this.commonComponent.keyName]:req.params.id};
+      const dataResponse = await this.commonComponent.UpdateData(query, data);
+      if (dataResponse.n == 1 && dataResponse.ok == 1) {
+        const dataResponsePopulate = await this.commonComponent.GetPopulateDataById(req.params.id);
+        res.send(dataResponsePopulate);
+      } else {
+        res.send(dataResponse);
+      }
   }
   
   async DeleteData(req: Request, res: Response, next: NextFunction) {
-    let query = {[this.commonComponent.keyName]:req.params.id};
-    const dataResponse = await this.commonComponent.DeleteData(query);
-    res.send(dataResponse);
+
+      let query = {[this.commonComponent.keyName]:req.params.id};
+      const dataResponse = await this.commonComponent.DeleteData(query);
+      res.send(dataResponse);
+
   }
   
   /*public validateRole(token, req: Request, res: Response) {

@@ -15,8 +15,10 @@ export class FormsComponent implements OnInit {
   @Input() isEdit: any;
   @Input() idModal: any;
   @Input() isModal: any;
+  @Input() isSend: any;
   @Input() isPrint: Boolean = false;
   @Input() isConfirm: any;
+  @Input() isLogin: any;  
   @Output() onSubmitCallback = new EventEmitter();
   @Output() onCompleteForm = new EventEmitter();
   form: FormGroup;

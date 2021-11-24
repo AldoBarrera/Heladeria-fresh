@@ -1,0 +1,143 @@
+﻿
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heladeria Fresh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a [routerLink]="" class="nav-link" (click)="clickHomeFunction()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/offers" routerLinkActive="active" class="nav-link">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/adress"  routerLinkActive="active" class="nav-link">Direccion</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public"  routerLinkActive="active" class="nav-link">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/aboutus"  routerLinkActive="active" class="nav-link">Quienes Somos</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="margin-left: auto;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div *ngIf="pageName == 'direccion'" style="
+background-image: url('./assets/img/Pil-express-orale2.jpg');
+background-size: cover;
+margin: 0!important;
+color: indigo;"
+class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal"><img src="./assets/img/logo.png" style="position: relative;top: 100px;left: -29px;"/></h1>
+    <a class="btn btn-outline-secondary" href="#">Ir</a>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="">
+    <div class="content-wrapper">
+      <div class="content">							
+        <div id = "tableLeft" class="bg-white border rounded">
+          <div class="row no-gutters">
+            
+        
+            
+
+            <div 
+              id = "bodycards" class="card card-default" *ngIf="pageName == 'direccion'"
+              style="
+                  width: 100%;
+                  flex-direction: row;
+              ">
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Mapa</h2>
+                <div style="width: 100%">
+                  <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Daniel%20S%C3%A1nchez%20Bustamante%20sucre+(Daniel%20S%C3%A1nchez%20Bustamante%201258)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/car-satnav-gps/">GPS car tracker</a></iframe>
+                </div>
+              </div>
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Direccion</h2>
+                <aside class="sc-eCImvq heSriC">
+                  <section class="aside-section1">
+                    <p>"Hola!! te damos la bienvenida a heladeria , Esperamos que estés muy bien, somos una heladería que quiere brindar experiencias y productos llenos de <span>amor</span>. Tenemos toda una barra de frutas y toppings dulces para que crees el mejor helado del mundo, tenemos helado suave de yogurt, café y unos espectaculares jugos naturales. Deseamos que <span>disfruten</span> de su estancia."</p>
+                  </section>
+                  <br>
+                  <section class="aside-section2">
+                    <h3>Horario:</h3>
+                    <ul>
+                      <li>
+                        <span> Lunes a viernes:</span>
+                        <p> 04:00pm - 11:00pm</p>
+                      </li>
+                      <li>
+                        <span> Sábado y Domingo:</span>
+                        <p> 04:00pm - 12:00am</p>
+                      </li>
+                    </ul>
+                  </section>
+                  <br>
+                  <section class="aside-section3">
+                    <p>consumo en el lugar
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                    <p>entrega a domicilio
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                    <p>para llevar
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                  </section>
+                
+                </aside>
+              </div>
+            </div>
+
+
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <footer class="footer mt-auto">
+        <div class="copyright bg-white">
+          <p>
+            &copy; <span id="copy-year">2021</span> Copyright Helados Powered by 
+            <a
+              class="text-primary"
+              href="https://www.facebook.com/"
+              target="_blank"
+              >Fresh</a
+            >.
+          </p>
+        </div>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.getElementById("copy-year").innerHTML = year;
+        </script>
+      </footer>
+
+  </div>
+</div>      
+         
+
+  

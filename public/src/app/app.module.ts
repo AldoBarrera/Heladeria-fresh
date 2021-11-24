@@ -12,7 +12,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { commonsRouting } from "./common/commons.routing";
 import { CommonsModule } from "./common/commons.module";
 import { SecurityModule } from "./core/security/security.module" 
-import { RestaurantModule } from "./modules/restaurant/restaurant.module" 
+import { RestaurantModule } from "./modules/heladeria/restaurant.module" 
 
 
 

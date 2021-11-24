@@ -1,0 +1,8 @@
+﻿<app-nav-barrestaurant></app-nav-barrestaurant>
+<div>
+  <h2>Enviar Pedido a la direccion {{singledata.ordn_address}}</h2>
+  
+  <app-forms [controls]="controls" [isEdit] = "true" [isSend]="true" (onCompleteForm)="onCompleteForm($event)" (onSubmitCallback)="onSubmit($event)"></app-forms>
+  <app-orderdetailspublic  [order]="singledata"></app-orderdetailspublic>
+  <h2>Pedido enviado: {{singledata.ordn_send}}</h2>
+</div>

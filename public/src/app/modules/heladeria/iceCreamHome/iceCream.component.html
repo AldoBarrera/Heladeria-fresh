@@ -1,0 +1,300 @@
+﻿
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heladeria Fresh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/offers" routerLinkActive="active" class="nav-link">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/adress"  routerLinkActive="active" class="nav-link">Direccion</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public"  routerLinkActive="active" class="nav-link">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/aboutus"  routerLinkActive="active" class="nav-link">Quienes Somos</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="margin-left: auto;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<ngb-carousel *ngIf="images && pageName == 'quienesSomos'">
+  <ng-template ngbSlide style="max-height: 432px;">
+    <div class="picsum-img-wrapper">
+      <img [src]="images[3]" alt="Random first slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(74, 219, 255);">
+      <h3> El postre favorito de todos</h3>
+      <p>Amor es amor y eso incluye el amor por los helados.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" >
+      <img [src]="images[4]" alt="Random second slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(124, 224, 255);">
+      <h3>Helado - amor y paz</h3>
+      <p>Domingo más 4 de la tarde, por un intenso calor es igual a refrescante helado de limón. La fórmula perfecta.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div *ngIf="pageName == 'home'" style="
+background-image: url('./assets/img/b6.jpg');
+background-size: cover;
+margin: 0!important;
+color: indigo;"
+class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal"><img src="./assets/img/logo.png" /></h1>
+    <a class="btn btn-outline-secondary" href="/public" style="color: #9bd0ff;">Comprar</a>
+  </div>
+</div>
+
+<div *ngIf="pageName == 'direccion'" style="
+background-image: url('./assets/img/Pil-express-orale2.jpg');
+background-size: cover;
+margin: 0!important;
+color: indigo;"
+class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal"><img src="./assets/img/logo.png" style="position: relative;top: 100px;left: -29px;"/></h1>
+    <a class="btn btn-outline-secondary" href="#">Ir</a>
+  </div>
+</div>
+
+<div *ngIf="pageName == 'home'" class="container marketing" style="margin-top: 50px;">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4" style="text-align: center;">
+      <img class="rounded-circle" src="./assets/img/h1.jpg" alt="Generic placeholder image" width="140" height="140">
+      <h2>Que tu corazón sea cálido</h2>
+      <p>Si quieres algo ve por él y punto; si quieres un helado, ven por él y punto. No lo pienses más y visita nuestra heladería, mira que la vida es hoy.</p>
+      <p><a class="btn btn-secondary" href="/public" role="button">Ver Producto »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4" style="text-align: center;">
+      <img class="rounded-circle" src="./assets/img/h2.jpg" alt="Generic placeholder image" width="140" height="140">
+      <h2>Los más ricos y originales</h2>
+      <p>Una copa de licor no es lo mismo que una copa con helado Ron Pasas. Te ofrecemos -40º de cremoso, dulce y frío sabor añejado ¿Ves la diferencia?</p>
+      <p><a class="btn btn-secondary" href="/public" role="button">Ver Producto »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4" style="text-align: center;">
+      <img class="rounded-circle" src="./assets/img/h3.jpg" alt="Generic placeholder image" width="140" height="140">
+      <h2>El reto es comer solo uno</h2>
+      <p>Está bien, está bien, no tentaremos más tu paladar con nuestros adictivos helados. Solo te recordamos que estamos abiertos todos los días y tenemos servicio de delivery. Llamanos.</p>
+      <p><a class="btn btn-secondary" href="/public" role="button">Ver Producto »</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <div *ngIf="pageName == 'home'" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div style="flex: 1;" class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Refrescante y cremoso</h2>
+        <p class="lead">De lo prohibido eres adicto, no nos importa tu dieta. Lo que nos importa es hacerte feliz con nuestras exclusivas paletas de crema helada.</p>
+      </div>
+      <div
+      class="bg-light box-shadow mx-auto" 
+      style="
+       background-image: url('./assets/img/h4.jpg');
+      background-size: cover;
+      width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div style="flex: 1;" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Sabor que derrite</h2>
+        <p class="lead">3 colores, 3 sabores es todo lo que necesita nuestro perfecto helado Napolitano, para cautivarte.</p>
+      </div>
+      <div class="bg-dark box-shadow mx-auto" style="background-image: url('./assets/img/h5.jfif');
+      background-size: cover;
+      width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">OPCIONES PARA TODOS</h2>
+      <p class="lead">Frutos rojos, Bailey’s, Carajillo y hasta Dulce de Leche. Explora todas las opciones de nuestro menú.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="https://icecreamnation.mx/assets/opciones-5cc6a07106703a7f07fd3c65583367dce861429c67d66fa7b4f8bdf3d70d57f4.png" data-holder-rendered="true">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">HEALTHY.</h2>
+      <p class="lead">Sabemos que la alimentación es de los factores más importantes para verse y sentirse bien. Es por ello que tenemos opciones keto sin azúcar elaboradas con todo el amor y sin todas las calorías innecesarias..</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="https://icecreamnation.mx/assets/healthy-906bbf5209adfb29994cbeb5945425dc2205ca5f246e7e5e0ac538b9acc1de27.png" data-holder-rendered="true" style="width: 500px; height: 500px;">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Siempre vas querer más. <span class="text-muted">Frio y natural.</span></h2>
+      <p class="lead">Helado positivo de las cosas, lo tenemos nosotros con nuestras paletas cremosas. Los helados se derriten y la vida es corta, así que disfrútalos a ambos al máximo, hasta el final.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="https://media-cdn.tripadvisor.com/media/photo-s/18/28/87/1d/helado-de-lucky-charms.jpg" data-holder-rendered="true" style="width: 500px; height: 500px;">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+</div>
+
+<div class="wrapper">
+  <div class="">
+    <div class="content-wrapper">
+      <div class="content">							
+        <div id = "tableLeft" class="bg-white border rounded">
+          <div class="row no-gutters">
+            
+        
+            
+
+            <div 
+              id = "bodycards" class="card card-default" *ngIf="pageName == 'direccion'"
+              style="
+                  width: 100%;
+                  flex-direction: row;
+              ">
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Mapa</h2>
+                <div style="width: 100%">
+                  <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Daniel%20S%C3%A1nchez%20Bustamante%20sucre+(Daniel%20S%C3%A1nchez%20Bustamante%201258)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/car-satnav-gps/">GPS car tracker</a></iframe>
+                </div>
+              </div>
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Direccion</h2>
+                <aside class="sc-eCImvq heSriC">
+                  <section class="aside-section1">
+                    <p>"Hola!! te damos la bienvenida a heladeria , Esperamos que estés muy bien, somos una heladería que quiere brindar experiencias y productos llenos de <span>amor</span>. Tenemos toda una barra de frutas y toppings dulces para que crees el mejor helado del mundo, tenemos helado suave de yogurt, café y unos espectaculares jugos naturales. Deseamos que <span>disfruten</span> de su estancia."</p>
+                  </section>
+                  <br>
+                  <section class="aside-section2">
+                    <h3>Horario:</h3>
+                    <ul>
+                      <li>
+                        <span> Lunes a viernes:</span>
+                        <p> 04:00pm - 11:00pm</p>
+                      </li>
+                      <li>
+                        <span> Sábado y Domingo:</span>
+                        <p> 04:00pm - 12:00am</p>
+                      </li>
+                    </ul>
+                  </section>
+                  <br>
+                  <section class="aside-section3">
+                    <p>consumo en el lugar
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                    <p>entrega a domicilio
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                    <p>para llevar
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                      </svg>
+                    </p>
+                  </section>
+                
+                </aside>
+              </div>
+            </div>
+
+
+            <div 
+              id = "bodycards" class="card card-default" *ngIf="pageName == 'quienesSomos'"
+              style="
+                  width: 100%;
+                  flex-direction: row;
+              ">
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Quienes Somos</h2>
+                <div style="width: 100%">
+                  <img src="./assets/img/h6.jpg" style="width: 100%;" />
+                </div>
+              </div>
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Heladeria Fresh</h2>
+                <aside class="sc-eCImvq heSriC">
+                  <section class="aside-section1">
+                    <p>FRESH HELADERÍA BUSCA RECUPERAR EL CONCEPTO DE HELADERÍA DE BARRIO CLÁSICA DONDE LAS PERSONAS SE REÚNEN A PASAR UN  BUEN RATO MIENTRAS DISFRUTAN DE UN BUEN PRODUCTO. NUESTRA FILOSOFÍA ES OBTENER LA MEJOR CALIDAD POSIBLE CON SABORES DEL MUNDO USANDO LAS MEJORES MATERIAS PRIMAS DEL MERCADO, LAS FRUTAS MEJOR SELECCIONADAS Y CON RECETAS ITALIANAS BIEN BALANCEADAS.</p>
+                  </section>
+                  <br>
+                  <section class="aside-section2">
+                    <p>CONSIDERANDO QUE BOLIVIA ES RECONOCIDA POR LA MANERA DE PRODUCIR, EXHIBIR Y SERVIR HELADOS ARTESANALES LOGRANDO UNA TEXTURA SUAVE, SABORES QUE SABEN A LO QUE PROMETEN Y UNA EXPERIENCIA ÚNICA A LA HORA DE COMERLOS.</p>
+                  </section>
+                  <br>
+                  <section class="aside-section3">
+                    <p>NUESTRO PROPÓSITO ES VOLVERNOS LA HELADERÍA PREFERIDA DE LOS COLOMBIANOS Y SER RECONOCIDOS POR NUESTRA CALIDAD, SERVICIO, INNOVACIÓN Y SOBRE TODO POR LOGRAR QUE CADA COLOMBIANO SE SIENTA COMO EN CASA CUANDO NOS VISITA.
+                    </p>
+                  </section>
+                
+                </aside>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <footer class="footer mt-auto">
+        <div class="copyright bg-white">
+          <p>
+            &copy; <span id="copy-year">2021</span> Copyright Helados Powered by 
+            <a
+              class="text-primary"
+              href="https://www.facebook.com/"
+              target="_blank"
+              >Fresh</a
+            >.
+          </p>
+        </div>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.getElementById("copy-year").innerHTML = year;
+        </script>
+      </footer>
+
+  </div>
+</div>      
+         
+
+  

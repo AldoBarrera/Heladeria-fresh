@@ -1,0 +1,134 @@
+﻿
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heladeria Fresh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a [routerLink]="" class="nav-link" (click)="clickHomeFunction()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/offers" routerLinkActive="active" class="nav-link">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/adress"  routerLinkActive="active" class="nav-link">Direccion</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public"  routerLinkActive="active" class="nav-link">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/aboutus"  routerLinkActive="active" class="nav-link">Quienes Somos</a>
+        </li>
+      </ul>
+      <form class="d-flex" style="margin-left: auto;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<ngb-carousel *ngIf="images && pageName == 'quienesSomos'">
+  <ng-template ngbSlide style="max-height: 432px;">
+    <div class="picsum-img-wrapper">
+      <img [src]="images[3]" alt="Random first slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(74, 219, 255);">
+      <h3> El postre favorito de todos</h3>
+      <p>Amor es amor y eso incluye el amor por los helados.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" >
+      <img [src]="images[4]" alt="Random second slide" width="100%">
+    </div>
+    <div class="carousel-caption" style="color: rgb(124, 224, 255);">
+      <h3>Helado - amor y paz</h3>
+      <p>Domingo más 4 de la tarde, por un intenso calor es igual a refrescante helado de limón. La fórmula perfecta.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+
+
+
+
+<div class="wrapper">
+  <div class="">
+    <div class="content-wrapper">
+      <div class="content">							
+        <div id = "tableLeft" class="bg-white border rounded">
+          <div class="row no-gutters">
+            
+        
+            
+
+            
+
+
+            <div 
+              id = "bodycards" class="card card-default" *ngIf="pageName == 'quienesSomos'"
+              style="
+                  width: 100%;
+                  flex-direction: row;
+              ">
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Quienes Somos</h2>
+                <div style="width: 100%">
+                  <img src="./assets/img/h6.jpg" style="width: 100%;" />
+                </div>
+              </div>
+              <div class="card-header card-header-border-bottom" style="width: 50%;">
+                <h2>Heladeria Fresh</h2>
+                <aside class="sc-eCImvq heSriC">
+                  <section class="aside-section1">
+                    <p>FRESH HELADERÍA BUSCA RECUPERAR EL CONCEPTO DE HELADERÍA DE BARRIO CLÁSICA DONDE LAS PERSONAS SE REÚNEN A PASAR UN  BUEN RATO MIENTRAS DISFRUTAN DE UN BUEN PRODUCTO. NUESTRA FILOSOFÍA ES OBTENER LA MEJOR CALIDAD POSIBLE CON SABORES DEL MUNDO USANDO LAS MEJORES MATERIAS PRIMAS DEL MERCADO, LAS FRUTAS MEJOR SELECCIONADAS Y CON RECETAS ITALIANAS BIEN BALANCEADAS.</p>
+                  </section>
+                  <br>
+                  <section class="aside-section2">
+                    <p>CONSIDERANDO QUE BOLIVIA ES RECONOCIDA POR LA MANERA DE PRODUCIR, EXHIBIR Y SERVIR HELADOS ARTESANALES LOGRANDO UNA TEXTURA SUAVE, SABORES QUE SABEN A LO QUE PROMETEN Y UNA EXPERIENCIA ÚNICA A LA HORA DE COMERLOS.</p>
+                  </section>
+                  <br>
+                  <section class="aside-section3">
+                    <p>NUESTRO PROPÓSITO ES VOLVERNOS LA HELADERÍA PREFERIDA DE LOS COLOMBIANOS Y SER RECONOCIDOS POR NUESTRA CALIDAD, SERVICIO, INNOVACIÓN Y SOBRE TODO POR LOGRAR QUE CADA COLOMBIANO SE SIENTA COMO EN CASA CUANDO NOS VISITA.
+                    </p>
+                  </section>
+                
+                </aside>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <footer class="footer mt-auto">
+        <div class="copyright bg-white">
+          <p>
+            &copy; <span id="copy-year">2021</span> Copyright Helados Powered by 
+            <a
+              class="text-primary"
+              href="https://www.facebook.com/"
+              target="_blank"
+              >Fresh</a
+            >.
+          </p>
+        </div>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.getElementById("copy-year").innerHTML = year;
+        </script>
+      </footer>
+
+  </div>
+</div>      
+         
+
+  
